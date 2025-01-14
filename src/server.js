@@ -18,6 +18,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 const PORT = process.env.PORT || 3000;
 
 // Iniciar el servidor HTTPS
-https.createServer(options, app).listen(PORT, () => {
+https.createServer(app).listen(PORT, () => {
   console.log(`Servidor HTTPS corriendo en puerto ${PORT}`);
 });
