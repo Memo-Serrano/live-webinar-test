@@ -1,25 +1,21 @@
 {
-  "name": "live-webinar",
+  "name": "zoom-websocket-app",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.js",
+    "dev": "webpack serve --mode development --open"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@zoomus/websdk": "^2.18.3",
-    "express": "^4.21.2",
-    "ws": "^8.18.0"
+    "@zoomus/websdk": "^2.15.0",
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.0",
-    "@babel/preset-env": "^7.26.0",
-    "babel-loader": "^9.2.1",
-    "webpack": "^5.97.1",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.0"
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0",
+    "webpack-dev-server": "^4.0.0",
+    "babel-loader": "^8.2.2",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10"
   }
 }
