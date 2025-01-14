@@ -3,52 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zoom Meeting + Botón Dinámico</title>
+  <title>Zoom Meeting + WebSocket</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- SDK de Zoom -->
-  <script src="https://source.zoom.us/2.15.0/lib/vendor/react.min.js"></script>
-  <script src="https://source.zoom.us/2.15.0/lib/vendor/react-dom.min.js"></script>
-  <script src="https://source.zoom.us/2.15.0/lib/vendor/redux.min.js"></script>
-  <script src="https://source.zoom.us/2.15.0/lib/vendor/redux-thunk.min.js"></script>
-  <script src="https://source.zoom.us/zoom-meeting-embedded-3.11.0.min.js"></script>
-  
 </head>
 <body>
   <h1>Zoom Meeting + Botón Dinámico</h1>
 
-  <!-- Contenedor para la reunión de Zoom -->
+  <!-- Contenedor del meeting -->
   <div id="zoomMeeting"></div>
 
-  <!-- Botón oculto inicialmente -->
+  <!-- Botón dinámico oculto inicialmente -->
   <button id="dynamicButton" style="display: none;">¡Hola, soy un botón!</button>
 
-  <script src="script.js"></script>
-
-  <script>
-    // Configuración del SDK de Zoom
-    const client = ZoomMtgEmbedded.createClient();
-
-    const meetingSDKElement = document.getElementById('zoomMeeting');
-    client.init({
-      debug: true,
-      zoomAppRoot: meetingSDKElement,
-      language: 'es-ES',
-    });
-
-    // Datos del meeting de Zoom (rellena con tus datos)
-    const meetingNumber = '87423967832'; // Reemplaza con tu número de reunión
-    const passcode = '718510'; // Reemplaza con tu passcode
-    const sdkKey = 'UEEbOouT0wWC14opf66w'; // Reemplaza con tu SDK Key
-    const userName = 'Invitado';
-
-    client.join({
-      sdkKey: sdkKey,
-      meetingNumber: meetingNumber,
-      passcode: passcode,
-      userName: userName,
-      signature: 'VUVFYk9vdVQwd1dDMTRvcGY2NncuODc0MjM5Njc4MzIuMTczNjgxNzI5MTg5Ny4xLitnUUxpUklHRGI3RmJHek5CYTlYSTR0YWZaQjhPQ2d3Rkd2ZWdSaEFORlE9', // Genera la firma en tu backend
-    });
-  </script>
+  <script src="/src/script.js"></script>
 </body>
 </html>
